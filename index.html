@@ -28,5 +28,22 @@
   </head>
   <body>
     <a href="create_password.html">Create password</a>
+    <p id="pokemon"></p>
+
+    <script>
+      // array = ["Enero","Febero","Marzo","Abril","Mayo","junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+      array = ["Enero", "Febero", "Marzo", "Abril", "Mayo"];
+
+      let algo = array.splice(1, 0, "Feb");
+
+      console.log(array);
+
+      fetch("https://pokeapi.co/api/v2/pokemon/3")
+      .then(response => response.json())
+      .then(pokemon => {
+        console.log(pokemon)
+        document.getElementById("pokemon").innerHTML = pokemon.name
+      })
+    </script>
   </body>
 </html>
